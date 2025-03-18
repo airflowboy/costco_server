@@ -5,8 +5,8 @@ import {
   CreateDateColumn,
 } from 'typeorm';
 
-@Entity('grocery')
-export class Grocery {
+@Entity('same_day_delivery')
+export class SameDayDelivery {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
