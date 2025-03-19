@@ -5,7 +5,7 @@ import {
   CreateDateColumn,
 } from 'typeorm';
 
-@Entity('cosmetic_beauty')
+@Entity('cosmetic_beauty_paper')
 export class CosmeticBeauty {
   @PrimaryGeneratedColumn('increment')
   id: number;

@@ -5,7 +5,7 @@ import {
   CreateDateColumn,
 } from 'typeorm';
 
-@Entity('health_supplements')
+@Entity('health_nutritional_supplements')
 export class HealthSupplement {
   @PrimaryGeneratedColumn('increment')
   id: number;
