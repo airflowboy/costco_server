@@ -6,7 +6,7 @@ import {
 } from 'typeorm';
 
 @Entity('cosmetic_beauty_paper')
-export class CosmeticBeauty {
+export class CosmeticBeautyPaper {
   @PrimaryGeneratedColumn('increment')
   id: number;
 

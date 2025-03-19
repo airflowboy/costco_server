@@ -6,7 +6,7 @@ import {
 } from 'typeorm';
 
 @Entity('health_nutritional_supplements')
-export class HealthSupplement {
+export class HealthNutritionalSupplements {
   @PrimaryGeneratedColumn('increment')
   id: number;
 

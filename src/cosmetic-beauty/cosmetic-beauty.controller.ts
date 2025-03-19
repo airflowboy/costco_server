@@ -1,20 +1,20 @@
 import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
 import { CosmeticBeautyService } from './cosmetic-beauty.service';
-import { CosmeticBeauty } from './entities/cosmetic-beauty.entity';
+import { CosmeticBeautyPaper } from './entities/cosmetic-beauty.entity';
 
-@Controller('cosmetic-beauty')
+@Controller('cosmetic-beauty-paper')
 export class CosmeticBeautyController {
   constructor(private readonly cosmeticBeautyService: CosmeticBeautyService) {}
 
   @Get(':id')
   async findOne(
     @Param('id', ParseIntPipe) id: number,
-  ): Promise<CosmeticBeauty> {
+  ): Promise<CosmeticBeautyPaper> {
     return this.cosmeticBeautyService.findOne(id);
   }
 
   @Get()
-  async findAll(): Promise<CosmeticBeauty[]> {
+  async findAll(): Promise<CosmeticBeautyPaper[]> {
     return this.cosmeticBeautyService.findAll();
   }
 }

@@ -1,16 +1,16 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { HealthSupplement } from './entities/health-supplement.entity';
+import { HealthNutritionalSupplements } from './entities/health-supplement.entity';
 
 @Injectable()
 export class HealthSupplementsService {
   constructor(
-    @InjectRepository(HealthSupplement)
-    private healthSupplementRepository: Repository<HealthSupplement>,
+    @InjectRepository(HealthNutritionalSupplements)
+    private healthSupplementRepository: Repository<HealthNutritionalSupplements>,
   ) {}
 
-  async findOne(id: number): Promise<HealthSupplement> {
+  async findOne(id: number): Promise<HealthNutritionalSupplements> {
     const item = await this.healthSupplementRepository.findOne({
       where: { id },
     });
@@ -20,7 +20,7 @@ export class HealthSupplementsService {
     return item;
   }
 
-  async findAll(): Promise<HealthSupplement[]> {
+  async findAll(): Promise<HealthNutritionalSupplements[]> {
     return this.healthSupplementRepository.find({
       take: 10,
       order: { id: 'DESC' },

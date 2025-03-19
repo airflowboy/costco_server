@@ -1,8 +1,8 @@
 import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
 import { HealthSupplementsService } from './health-supplements.service';
-import { HealthSupplement } from './entities/health-supplement.entity';
+import { HealthNutritionalSupplements } from './entities/health-supplement.entity';
 
-@Controller('health-supplements')
+@Controller('health-nutritional-supplements')
 export class HealthSupplementsController {
   constructor(
     private readonly healthSupplementsService: HealthSupplementsService,
@@ -11,12 +11,12 @@ export class HealthSupplementsController {
   @Get(':id')
   async findOne(
     @Param('id', ParseIntPipe) id: number,
-  ): Promise<HealthSupplement> {
+  ): Promise<HealthNutritionalSupplements> {
     return this.healthSupplementsService.findOne(id);
   }
 
   @Get()
-  async findAll(): Promise<HealthSupplement[]> {
+  async findAll(): Promise<HealthNutritionalSupplements[]> {
     return this.healthSupplementsService.findAll();
   }
 }
